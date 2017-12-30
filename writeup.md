@@ -76,6 +76,9 @@ steps_per_epoch = 200
 validation_steps = 50
 workers = 2
 ```
+Increasing the learning rate improved the model while decreasing it resulted in bad scores.
+Increasing the number of epochs improved the score as well.
+Using a 100 batch size did ok for me in this project, so I didn't have to tune it further.
 
 #### 4. The student has a clear understanding and is able to identify the use of various techniques and concepts in network layers indicated by the write-up.
 In FCN instead of feading the output of the convolution network into a fully connected layer, a 1X1 convolution layer is used instead, this way we won't have to flatten the output into a 2D tensor and accordingly we won't be losing spatial information.
@@ -87,6 +90,12 @@ Then comes the decoder which upsamples the shrinked input passed to it by the en
 
 #### 6. The student displays a solid understanding of the limitations to the neural network with the given data chosen for various follow-me scenarios which are conveyed in the write-up.
 As data collection is as important as building the model, the current model and data won't be able to follow a different object, like a dog or a cat for example, because the data (images) was collected to help the model identify the human hero, it captured images with the hero in it from different angles as well as images in which the hero walks among other humans and so on. If we want to follow a dog for example, we'll have to collect new data, capturing the dog from different angles and in different positions as well. And then train our model using the new data.
+
+#### 7. Future enhancements
+The project output could be improved by:
+1- Recording more data, for now I only used the images provided by default, adding new images should help improve the model's score.
+2- Experimenting more with the hyperparameters, like decreasing the learning rate more and/or increaasing the number of epochs, this will increase the training time a lot but might increase the score.
+3- Experimenting more with the number of layers in the encoder and decoder, and also changing the filters, I've experimented a little till I reached the desired score, but I could try increasing the layers and the filters to see what happens.
 
 ### Model
 
